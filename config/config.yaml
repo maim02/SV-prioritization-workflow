@@ -3,6 +3,12 @@ data_dir: "/path/to/data"
 sv_suffix: "dragen.sv.vcf.gz"
 cnv_suffix: "dragen.cnv.vcf.gz"
 
-db_host: "'host=111.111.11.11 dbname=db user=person'"
+db_host: "'host=111.111.11.11 dbname=db user=user'"
 
 filter_expression: 'FILTER="PASS" && QUAL>=30 && INFO/SVTYPE!="BND"' #if including BND use: 'FILTER="PASS" && QUAL>=30' 
+
+
+gnomad: "resources/gnomAD_sv_290726.bed"
+inhouse: "resources/inhouse_030826.bed"
+gene_region: "resources/genes/panel/scn_gene_region.bed"
+regulatory_region_gene: "resources/genes/panel/scn_regulatory_region_gene_1000window.bed"

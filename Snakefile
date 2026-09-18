@@ -264,7 +264,7 @@ rule gnomad_overlap:
 
     params:
         script="scripts/bed_overlap.py",
-        gnomad_bed="resources/gnomAD_sv_290726.bed"
+        gnomad_bed=config["gnomad"]
     conda: 
         "sv_env"
     shell:
@@ -289,7 +289,7 @@ rule inhouse_freq:
 
     params:
         script="scripts/inhouse_freq.py",
-        inhouse_file="resources/inhouse_030826.bed",
+        inhouse_file=config["inhouse"]
 
     conda: 
         "sv_env"
@@ -366,7 +366,7 @@ rule scn_extraction:
 
     params:
         script="scripts/bed_overlap.py",
-        panel_genes="resources/genes/panel/scn_regulatory_region_gene_1000window.bed",
+        panel_genes=config["regulatory_region_gene"]
         min_overlap=1E-9
     conda: 
         "sv_env"
@@ -425,7 +425,7 @@ rule gene_region_extraction:
         "output/gene_region/panel/sv_in_gene_region.bed"
 
     params:
-        genes_file="resources/genes/panel/scn_gene_region.bed",
+        genes_file=config["gene_region"],
         script="scripts/bed_overlap.py",
         min_overlap=1E-9
     conda: 
@@ -510,7 +510,6 @@ rule screen_prioritization:
 
     output:
         out_file="output/prioritized/prioritized_filtered_sv.tsv",
-        #panel_out="output/prioritized/prioritized_filtered_panel_sv.tsv"
 
     params:
         script="scripts/prioritization.py"

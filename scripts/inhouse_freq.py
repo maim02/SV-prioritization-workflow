@@ -115,7 +115,6 @@ def check_inhouse_freq(inhouse_file:str, variants_file:str, out_file:str):
 
 
 if __name__ == "__main__":
-    #variants_file = "/archive/emedgene_data/output/analysis_run/prioritized_disease_variants_no_scn_no_lowdnase_gnomadfiltered.tsv"
     parser = argparse.ArgumentParser(
             description="Perform inhouse freq filtering"
         )

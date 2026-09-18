@@ -6,6 +6,7 @@ import argparse
 from get_alternative_panel import get_cCREs_regions
 
 ### get hpo based genes in internal database
+### just as an example to show how i did this.
 
 
 QUERY = r"""
