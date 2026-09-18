@@ -1,0 +1,8 @@
+# example config
+data_dir: "/path/to/data"
+sv_suffix: "dragen.sv.vcf.gz"
+cnv_suffix: "dragen.cnv.vcf.gz"
+
+db_host: "'host=111.111.11.11 dbname=db user=person'"
+
+filter_expression: 'FILTER="PASS" && QUAL>=30 && INFO/SVTYPE!="BND"' #if including BND use: 'FILTER="PASS" && QUAL>=30' 
